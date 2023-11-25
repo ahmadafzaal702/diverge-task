@@ -1,14 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import { AiOutlineArrowRight } from "react-icons/ai";
+import { AiOutlineArrowRight, AiOutlineArrowDown } from "react-icons/ai";
 import Image from "next/image";
 import picture from "@/assests/video.png";
 
 // MainSection FC
 const MainSection = () => {
   const [videoSummary, setVideoSummary] = useState(false);
-
-  console.log(videoSummary);
   // MainSection FC return
   return (
     <>
@@ -35,20 +33,23 @@ const MainSection = () => {
         <div className="bg-gray-medium rounded-md px-4 py-4 mt-3">
           <div className=" flex justify-between items-center ">
             <h2>Video Summary</h2>
-            <div>
-              <span>
-                <AiOutlineArrowRight
-                  className="text-xl cursor-pointer"
-                  onClick={() => {
-                    setVideoSummary(!videoSummary);
-                  }}
-                />
-              </span>
+            <div
+              className="text-xl cursor-pointer"
+              onClick={() => {
+                setVideoSummary(!videoSummary);
+              }}
+            >
+              {videoSummary ? <AiOutlineArrowDown /> : <AiOutlineArrowRight />}
             </div>
           </div>
 
           {/* summary text */}
-          <div className="mt-3 text-sm">
+
+          <div
+            className={`mt-3 text-sm duration-300 ${
+              videoSummary ? "block" : "hidden"
+            }`}
+          >
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industrys standard dummy text
