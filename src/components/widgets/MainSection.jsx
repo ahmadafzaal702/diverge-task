@@ -28,7 +28,7 @@ const MainSection = () => {
 
         {/* main player */}
         <div className="mt-3">
-          <Image src={picture} width="100%" height="100%" />
+          <Image src={picture} alt={picture} width="100%" height="100%" />
         </div>
 
         {/* Summary section */}
@@ -51,10 +51,10 @@ const MainSection = () => {
           <div className="mt-3 text-sm">
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
+              industry. Lorem Ipsum has been the industrys standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book. It has
-              survived not only five centuries,
+              survived not only five centuries.
             </p>
           </div>
         </div>

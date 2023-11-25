@@ -34,7 +34,7 @@ const sidebarData = [
     _id: 5,
     speaker: "Speake 1",
     time: "00.02",
-    title: "Good Morning, Albert Flores, isn't it?",
+    title: "Good Morning, Albert Flores, isnt it?",
     active: true,
   },
 ];
