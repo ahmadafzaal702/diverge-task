@@ -35,7 +35,7 @@ const LeftSidebar = () => {
   // LeftSidebar FC return
   return (
     <>
-      <section className="bg-gray-light px-3 min-h-screen">
+      <section className="bg-gray-light px-3 py-3 min-h-[718px]">
         {/* search div */}
         <div className="py-2">
           <input

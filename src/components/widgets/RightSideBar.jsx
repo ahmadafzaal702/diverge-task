@@ -37,6 +37,13 @@ const sidebarData = [
     title: "Good Morning, Albert Flores, isnt it?",
     active: true,
   },
+  {
+    _id: 6,
+    speaker: "Speake 2",
+    time: "00.02",
+    title: "Good Morning, Albert Flores, isnt it?",
+    active: false,
+  },
 ];
 
 // RightSideBar FC
@@ -44,9 +51,9 @@ const RightSideBar = () => {
   // RightSideBar FC return
   return (
     <>
-      <section className="bg-gray-light px-3 min-h-screen">
+      <section className="bg-gray-light px-3 py-3 min-h-screen">
         {/* search div */}
-        <div className="flex gap-x-4 py-2">
+        <div className="flex gap-x-4 pb-2">
           <button className="rounded-md bg-white border border-white hover:border-primary px-5 py-1 text-sm leading-6 text-gray-dark shadow-sm ">
             Origional
           </button>

@@ -4,9 +4,43 @@ import { AiOutlineArrowRight, AiOutlineArrowDown } from "react-icons/ai";
 import Image from "next/image";
 import picture from "@/assests/video.png";
 
+const videoInformationData = [
+  {
+    id: 1,
+    title: "Detected Language:",
+    value: "Persian",
+  },
+  {
+    id: 2,
+    title: "Title:",
+    value: "US and China agree to resign.mp4",
+  },
+  {
+    id: 3,
+    title: "Number of speakers:",
+    value: "2",
+  },
+  {
+    id: 4,
+    title: "Duration:",
+    value: "1.40",
+  },
+  {
+    id: 5,
+    title: "Sentiment Analysis:",
+    value: "Confusion",
+  },
+  {
+    id: 6,
+    title: "Date:",
+    value: "13/11/2023",
+  },
+];
+
 // MainSection FC
 const MainSection = () => {
   const [videoSummary, setVideoSummary] = useState(false);
+  const [videoInformation, setVideoInformation] = useState(false);
   // MainSection FC return
   return (
     <>
@@ -30,11 +64,23 @@ const MainSection = () => {
         </div>
 
         {/* Summary section */}
-        <div className="bg-gray-medium rounded-md px-4 py-4 mt-3">
+        <div
+          className={`${
+            videoSummary ? "bg-[#FFF6EC]" : "bg-gray-medium"
+          } rounded-md px-4 py-4 mt-3`}
+        >
           <div className=" flex justify-between items-center ">
-            <h2>Video Summary</h2>
+            <h2
+              className={`${
+                videoSummary ? "text-[#F2870D]" : "text-gray-dark"
+              }`}
+            >
+              Video Summary
+            </h2>
             <div
-              className="text-xl cursor-pointer"
+              className={`${
+                videoSummary ? "text-[#F2870D]" : "text-gray-dark"
+              } text-xl cursor-pointer`}
               onClick={() => {
                 setVideoSummary(!videoSummary);
               }}
@@ -44,7 +90,6 @@ const MainSection = () => {
           </div>
 
           {/* summary text */}
-
           <div
             className={`mt-3 text-sm duration-300 ${
               videoSummary ? "block" : "hidden"
@@ -61,14 +106,39 @@ const MainSection = () => {
         </div>
 
         {/* Information section */}
-        <div className="mt-3">
-          <div className="bg-white flex justify-between items-center rounded-md px-4 py-4 mt-2 border border-primary">
+        <div className="bg-white mt-3 px-4 py-4 border border-primary rounded-md">
+          <div className="flex justify-between items-center">
             <h2>Video Information</h2>
-            <div>
-              <span>
-                <AiOutlineArrowRight className="text-xl cursor-pointer" />
-              </span>
+            <div
+              className={`${
+                videoInformation ? "text-[#F2870D]" : "text-gray-dark"
+              } text-xl cursor-pointer`}
+              onClick={() => {
+                setVideoInformation(!videoInformation);
+              }}
+            >
+              {videoInformation ? (
+                <AiOutlineArrowDown />
+              ) : (
+                <AiOutlineArrowRight />
+              )}
             </div>
+          </div>
+
+          {/* information detail */}
+          <div
+            className={`mt-3 text-sm duration-300 ${
+              videoInformation ? "block" : "hidden"
+            } grid grid-cols-1 md:grid-cols-2 gap-4 p-4`}
+          >
+            {videoInformationData?.map((data, i) => {
+              return (
+                <div className="flex gap-x-3 text-sm">
+                  <p>{data.title}</p>
+                  <p className="text-[#F2870D]">{data.value}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

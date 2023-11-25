@@ -1,7 +1,7 @@
 import { LeftSidebar, MainSection, RightSideBar } from "@/components";
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main>
       <div className="flex gap-x-4 gap-y-3">
         <div className="basis-3/12">
           <LeftSidebar />
