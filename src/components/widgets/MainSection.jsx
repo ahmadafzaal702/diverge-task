@@ -133,7 +133,7 @@ const MainSection = () => {
           >
             {videoInformationData?.map((data, i) => {
               return (
-                <div className="flex gap-x-3 text-sm">
+                <div className="flex gap-x-3 text-sm" key={data.id}>
                   <p>{data.title}</p>
                   <p className="text-[#F2870D]">{data.value}</p>
                 </div>
