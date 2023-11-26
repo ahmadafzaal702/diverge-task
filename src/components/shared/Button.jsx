@@ -1,11 +1,9 @@
 import React from "react";
 
 // Button FC
-const Button = () => {
+const Button = ({ title, bg, bgHover }) => {
   return (
-    <button className="rounded-md bg-primary hover:bg-primary-hover px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-hover">
-      Hello World
-    </button>
+    <button className={`headerButton ${bg} hover:${bgHover}`}>{title}</button>
   );
 };
 

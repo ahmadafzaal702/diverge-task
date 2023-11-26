@@ -7,4 +7,7 @@ import LeftSidebar from "./widgets/LeftSidebar";
 import MainSection from "./widgets/MainSection";
 import RightSideBar from "./widgets/RightSideBar";
 
-export { Header, Footer, LeftSidebar, MainSection, RightSideBar };
+// Shared
+import Button from "./shared/Button";
+
+export { Header, Footer, Button, LeftSidebar, MainSection, RightSideBar };

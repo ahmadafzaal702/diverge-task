@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { AiOutlineArrowRight, AiOutlineArrowDown } from "react-icons/ai";
+import { Button } from "@/components";
+
 import Image from "next/image";
 import picture from "@/assests/video.png";
 
@@ -46,12 +48,14 @@ const MainSection = () => {
     <>
       <section className="bg-white">
         {/* Advance settings */}
-        <div className="bg-white flex justify-between items-center rounded-md border border-primary px-4 py-4 mt-3">
+        <div className="flex justify-between items-center rounded-md border border-primary px-4 py-3 mt-3">
           <h2>Advance Setting</h2>
           <div className="flex gap-x-5 items-center">
-            <button className="rounded-md bg-primary hover:bg-primary-hover px-5 py-2 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-hover">
-              Process
-            </button>
+            <Button
+              title="Process"
+              bg="bg-primary"
+              bgHover="bg-primary-hover"
+            />
             <span>
               <AiOutlineArrowRight className="text-xl text-primary cursor-pointer" />
             </span>
@@ -67,9 +71,9 @@ const MainSection = () => {
         <div
           className={`${
             videoSummary ? "bg-[#FFF6EC]" : "bg-gray-medium"
-          } rounded-md px-4 py-4 mt-3`}
+          } rounded-md p-4 mt-3`}
         >
-          <div className=" flex justify-between items-center ">
+          <div className="flex justify-between items-center">
             <h2
               className={`${
                 videoSummary ? "text-[#F2870D]" : "text-gray-dark"
@@ -106,7 +110,7 @@ const MainSection = () => {
         </div>
 
         {/* Information section */}
-        <div className="bg-white mt-3 px-4 py-4 border border-primary rounded-md">
+        <div className="mt-3 p-4 border border-primary rounded-md">
           <div className="flex justify-between items-center">
             <h2>Video Information</h2>
             <div
@@ -133,7 +137,7 @@ const MainSection = () => {
           >
             {videoInformationData?.map((data, i) => {
               return (
-                <div className="flex gap-x-3 text-sm" key={data.id}>
+                <div className="flex gap-x-3 text-xs" key={data.id}>
                   <p>{data.title}</p>
                   <p className="text-[#F2870D]">{data.value}</p>
                 </div>

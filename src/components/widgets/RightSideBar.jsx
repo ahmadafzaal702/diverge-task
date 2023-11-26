@@ -1,5 +1,4 @@
 import React from "react";
-import { AiOutlineEllipsis } from "react-icons/ai";
 
 const sidebarData = [
   {
@@ -51,18 +50,12 @@ const RightSideBar = () => {
   // RightSideBar FC return
   return (
     <>
-      <section className="bg-gray-light px-3 py-3 min-h-screen">
+      <section className="bg-gray-light p-3 min-h-screen">
         {/* search div */}
         <div className="flex gap-x-4 pb-2">
-          <button className="rounded-md bg-white border border-white hover:border-primary px-5 py-1 text-sm leading-6 text-gray-dark shadow-sm ">
-            Origional
-          </button>
-          <button className="rounded-md bg-white border border-white hover:border-primary px-5 py-1 text-sm leading-6 text-gray-dark shadow-sm ">
-            English
-          </button>
-          <button className="rounded-md bg-white border border-white hover:border-primary px-5 py-1 text-sm leading-6 text-gray-dark shadow-sm ">
-            Arabic
-          </button>
+          <button className="rightSidebarButton">Origional</button>
+          <button className="rightSidebarButton">English</button>
+          <button className="rightSidebarButton">Arabic</button>
         </div>
 
         {/* sidebar options */}
@@ -78,17 +71,17 @@ const RightSideBar = () => {
                 <h3
                   className={`${
                     data.active ? "text-speaker1-text" : "text-speaker2-text"
-                  } `}
+                  } text-sm`}
                 >
                   {data.speaker}
                 </h3>
                 <hr
-                  className={`w-20 h-[1px] ${
+                  className={`w-16 mt-[2px] h-[1px] ${
                     data.active ? "bg-speaker1-text" : "bg-speaker2-text"
                   } border-0 rounded`}
                 />
-                <p>{data.time}</p>
-                <p>{data.title}</p>
+                <p className="text-xs mt-1">{data.time}</p>
+                <p className="text-xs mt-1">{data.title}</p>
               </div>
             );
           })}
